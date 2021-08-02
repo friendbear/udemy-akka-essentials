@@ -55,4 +55,8 @@ object MultithreadingRecap extends App {
     filteredMeaning <- filterdFuture
   } yield meaningOfLife + filteredMeaning
 
+  aNonsenseFuture.onComplete({
+    case Success(v) => println(v)
+    case Failure(_) => println("None")
+  })
 }
